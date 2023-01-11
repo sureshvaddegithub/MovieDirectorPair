@@ -14,6 +14,9 @@ public class DirectorRepository {
         return "added successfully";
     }
     public String getDirectorByMovieNameFromDb(String movieName){
-        return movieDirectorPair.get(movieName);
+        if(movieDirectorPair.containsKey(movieName)) {
+            return movieDirectorPair.get(movieName);
+        }
+        return "Records Not found";
     }
 }
